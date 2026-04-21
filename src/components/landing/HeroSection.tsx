@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
+
+const openTrial = () => window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
 
 function MiniDashboard() {
   return (
@@ -144,10 +148,10 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 20 }}>
-              <a href="#trial" className="btn-primary" style={{ fontSize: 15, padding: "0.8rem 1.75rem" }}>
-                Prueba gratis 15 días
+              <button onClick={openTrial} className="btn-primary" style={{ fontSize: 15, padding: "0.8rem 1.75rem" }}>
+                Prueba gratis 15 días — sin tarjeta
                 <ArrowRight size={16} />
-              </a>
+              </button>
               <a href="#demo" className="btn-secondary" style={{ fontSize: 15 }}>
                 Solicitar demo
               </a>

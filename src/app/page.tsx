@@ -5,6 +5,7 @@ import FeaturesSection from "@/components/landing/FeaturesSection";
 import ModulesSection from "@/components/landing/ModulesSection";
 import MetricsSection from "@/components/landing/MetricsSection";
 import TestimonialSection from "@/components/landing/TestimonialSection";
+import PricingSection from "@/components/landing/PricingSection";
 import TrialSection from "@/components/landing/TrialSection";
 import LeadFormSection from "@/components/landing/LeadFormSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
@@ -22,6 +23,7 @@ export default function Home() {
         <ModulesSection />
         <MetricsSection />
         <TestimonialSection />
+        <PricingSection />
         <TrialSection />
         <LeadFormSection />
         <FinalCTASection />

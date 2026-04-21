@@ -1,4 +1,8 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
+
+const openTrial = () => window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
 
 const testimonialSnippets = [
   { init: "RS", name: "Dr. Salinas", role: "Cardiólogo", quote: "+30% ingresos en 3 meses" },
@@ -52,10 +56,10 @@ export default function FinalCTASection() {
 
         {/* Buttons */}
         <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 36 }}>
-          <a href="#trial" className="btn-primary" style={{ fontSize: 16, padding: "0.9rem 2.25rem" }}>
+          <button onClick={openTrial} className="btn-primary" style={{ fontSize: 16, padding: "0.9rem 2.25rem" }}>
             Prueba gratis 15 días
             <ArrowRight size={18} />
-          </a>
+          </button>
           <a href="#demo" style={{
             display: "inline-flex", alignItems: "center", justifyContent: "center",
             fontSize: 16, padding: "0.9rem 2.25rem",

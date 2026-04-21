@@ -317,9 +317,17 @@ export default function TrialModal({ isOpen, onClose }: Props) {
                 }}>
                   15 días gratis · Sin tarjeta de crédito
                 </div>
-                <h2 style={{ fontWeight: 800, fontSize: 20, color: "#0f172a", letterSpacing: "-0.02em", marginBottom: 4 }}>
-                  Activa tu prueba gratuita
-                </h2>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
+                  <img
+                    src="/images/isotipo.png"
+                    alt=""
+                    aria-hidden="true"
+                    style={{ height: 26, width: "auto", display: "block", objectFit: "contain", flexShrink: 0 }}
+                  />
+                  <h2 style={{ fontWeight: 800, fontSize: 20, color: "#0f172a", letterSpacing: "-0.02em", margin: 0 }}>
+                    Activa tu prueba gratuita
+                  </h2>
+                </div>
                 <p style={{ fontSize: 13, color: "#9ca3af" }}>
                   Acceso completo a todos los módulos durante 15 días.
                 </p>

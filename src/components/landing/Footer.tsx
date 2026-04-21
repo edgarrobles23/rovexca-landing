@@ -1,4 +1,7 @@
+"use client";
+
 const WA = "528110804363";
+const openTrial = () => window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
 
 export default function Footer() {
   return (
@@ -8,15 +11,12 @@ export default function Footer() {
 
           {/* Brand */}
           <div style={{ gridColumn: "span 2" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <span style={{ width: 32, height: 32, borderRadius: 8, background: "#2563eb", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8.5L6.5 12L13 4" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <span style={{ fontWeight: 700, fontSize: 17, letterSpacing: "-0.02em" }}>
-                Rovexca <span style={{ color: "#60a5fa" }}>Health</span>
-              </span>
+            <div style={{ marginBottom: 16 }}>
+              <img
+                src="/images/logo-footer.png"
+                alt="Rovexca Health"
+                style={{ height: 52, width: "auto", display: "block", objectFit: "contain" }}
+              />
             </div>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: 280, marginBottom: 20 }}>
               La plataforma de gestión clínica diseñada para médicos que quieren más control y más ingresos.
@@ -54,9 +54,9 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <a href="#trial" style={{ fontSize: 14, fontWeight: 600, color: "#60a5fa", textDecoration: "none" }}>
+                <button onClick={openTrial} style={{ fontSize: 14, fontWeight: 600, color: "#60a5fa", background: "none", border: "none", cursor: "pointer", padding: 0, textDecoration: "underline" }}>
                   Prueba gratis 15 días
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -81,7 +81,7 @@ export default function Footer() {
               ))}
               <li>
                 <a
-                  href="https://app.rovexca.com"
+                  href="https://app.rovexca.ai"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

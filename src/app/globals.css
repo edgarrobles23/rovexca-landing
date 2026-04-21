@@ -29,6 +29,22 @@
   padding: 0;
 }
 
+/* Navbar responsive visibility */
+.desktop-nav {
+  display: none;
+}
+.mobile-menu-btn {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

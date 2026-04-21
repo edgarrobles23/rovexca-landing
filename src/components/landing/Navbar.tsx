@@ -20,40 +20,58 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const fn = () => { if (window.innerWidth >= 768) setOpen(false); };
+    window.addEventListener("resize", fn);
+    return () => window.removeEventListener("resize", fn);
+  }, []);
+
+  const openTrial = () => {
+    setOpen(false);
+    window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
+  };
+
   return (
-    <header
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        background: scrolled ? "rgba(255,255,255,0.95)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid #e5e7eb" : "1px solid transparent",
-        transition: "all 0.25s ease",
-      }}
-    >
-      <div className="container" style={{ height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+    <header style={{
+      position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
+      background: scrolled || open ? "rgba(255,255,255,0.97)" : "transparent",
+      backdropFilter: scrolled || open ? "blur(12px)" : "none",
+      borderBottom: scrolled || open ? "1px solid #e5e7eb" : "1px solid transparent",
+      transition: "background 0.25s ease, border-color 0.25s ease",
+    }}>
+      {/* ── Main bar ─────────────────────────────────────────────── */}
+      <div style={{
+        maxWidth: 1200, margin: "0 auto", padding: "0 1.5rem",
+        height: 68, display: "flex", alignItems: "center", justifyContent: "space-between",
+      }}>
+
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none" }}>
-          <span style={{
-            width: 32, height: 32,
-            borderRadius: 8,
-            background: "#2563eb",
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8.5L6.5 12L13 4" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-          <span style={{ fontWeight: 700, fontSize: 17, color: "#0f172a", letterSpacing: "-0.02em" }}>
-            Rovexca <span style={{ color: "#2563eb" }}>Health</span>
-          </span>
+        <Link
+          href="/"
+          style={{
+            display: "flex", alignItems: "center", flexShrink: 0,
+            textDecoration: "none",
+            transition: "opacity 0.15s ease, transform 0.15s ease",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLAnchorElement).style.opacity = "0.85";
+            (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.02)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
+            (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)";
+          }}
+        >
+          <img
+            src="/images/logo.png"
+            alt="Rovexca Health"
+            style={{ height: "clamp(32px, 5vw, 50px)", width: "auto", display: "block" }}
+          />
         </Link>
 
-        {/* Desktop nav */}
-        <nav style={{ display: "flex", alignItems: "center", gap: 32 }} className="hidden md:flex">
+        {/* Desktop nav — hidden on mobile via media query class */}
+        <nav className="desktop-nav" style={{ alignItems: "center", gap: 32 }}>
           {links.map((l) => (
             <a
               key={l.label}
@@ -68,80 +86,84 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTAs */}
-        <div className="hidden md:flex" style={{ alignItems: "center", gap: 10 }}>
+        <div className="desktop-nav" style={{ alignItems: "center", gap: 10 }}>
           <a
-            href="https://app.rovexca.com"
+            href="https://app.rovexca.ai"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              fontSize: 14, fontWeight: 500, color: "#6b7280",
-              textDecoration: "none", padding: "0.5rem 1rem",
-              transition: "color 0.15s",
-            }}
+            style={{ fontSize: 14, fontWeight: 500, color: "#6b7280", textDecoration: "none", padding: "0.5rem 1rem", transition: "color 0.15s" }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#0f172a")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#6b7280")}
           >
             Iniciar sesión
           </a>
-          <button
-            onClick={() => window.dispatchEvent(new CustomEvent("rovexca:open-trial"))}
-            className="btn-primary"
-            style={{ fontSize: 14, padding: "0.5rem 1.25rem" }}
-          >
+          <button onClick={openTrial} className="btn-primary" style={{ fontSize: 14, padding: "0.5rem 1.25rem" }}>
             Prueba gratis
           </button>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Hamburger — only on mobile */}
         <button
-          className="md:hidden"
+          className="mobile-menu-btn"
           onClick={() => setOpen(!open)}
-          style={{ background: "none", border: "none", cursor: "pointer", padding: 8 }}
-          aria-label="Menú"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
+          style={{ background: "none", border: "none", cursor: "pointer", padding: 8, flexShrink: 0 }}
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#374151" strokeWidth="2">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#374151" strokeWidth="2" strokeLinecap="round">
             {open
-              ? <><path d="M5 5l10 10M15 5L5 15" strokeLinecap="round" /></>
-              : <><path d="M3 6h14M3 10h14M3 14h14" strokeLinecap="round" /></>
+              ? <><line x1="5" y1="5" x2="17" y2="17" /><line x1="17" y1="5" x2="5" y2="17" /></>
+              : <><line x1="3" y1="7" x2="19" y2="7" /><line x1="3" y1="11" x2="19" y2="11" /><line x1="3" y1="15" x2="19" y2="15" /></>
             }
           </svg>
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* ── Mobile dropdown menu ──────────────────────────────────── */}
       {open && (
         <div style={{
           background: "#fff",
-          borderTop: "1px solid #e5e7eb",
-          padding: "1rem 1.5rem",
-          display: "flex",
-          flexDirection: "column",
-          gap: 16,
+          borderTop: "1px solid #f1f5f9",
+          padding: "0.5rem 1.5rem 1.5rem",
         }}>
           {links.map((l) => (
-            <a key={l.label} href={l.href} onClick={() => setOpen(false)}
-              style={{ fontSize: 15, fontWeight: 500, color: "#374151", textDecoration: "none" }}>
+            <a
+              key={l.label}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              style={{
+                display: "block", padding: "0.875rem 0",
+                fontSize: 16, fontWeight: 500, color: "#374151",
+                textDecoration: "none", borderBottom: "1px solid #f1f5f9",
+                transition: "color 0.15s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#2563eb")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#374151")}
+            >
               {l.label}
             </a>
           ))}
+
           <a
-            href="https://app.rovexca.com"
+            href="https://app.rovexca.ai"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ fontSize: 15, fontWeight: 500, color: "#6b7280", textDecoration: "none" }}
             onClick={() => setOpen(false)}
+            style={{
+              display: "block", padding: "0.875rem 0",
+              fontSize: 16, fontWeight: 500, color: "#6b7280",
+              textDecoration: "none", borderBottom: "1px solid #f1f5f9",
+            }}
           >
             Iniciar sesión
           </a>
+
           <button
-            onClick={() => {
-              setOpen(false);
-              window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
-            }}
+            onClick={openTrial}
             className="btn-primary"
-            style={{ textAlign: "center", width: "100%" }}
+            style={{ width: "100%", marginTop: "1rem", textAlign: "center", fontSize: 15 }}
           >
-            Prueba gratis 15 días
+            Prueba gratis 15 días →
           </button>
         </div>
       )}
