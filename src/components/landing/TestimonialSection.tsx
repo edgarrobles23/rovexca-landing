@@ -16,7 +16,7 @@ const testimonials = [
     highlight: false,
   },
   {
-    quote: "Rovexca Clinical es increíble. El expediente digital cumple la norma desde el primer día. Soporte respondió en menos de 1 hora cuando lo necesité.",
+    quote: "Rovexca Clinical es increíble. Me permitió organizar mejor el expediente clínico desde el inicio. Soporte respondió en menos de 1 hora cuando lo necesité.",
     name: "Dr. Jorge Méndez",
     role: "Medicina Familiar · Guadalajara",
     initials: "JM",

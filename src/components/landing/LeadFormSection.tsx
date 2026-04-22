@@ -64,7 +64,7 @@ export default function LeadFormSection() {
               {[
                 { icon: "⚡", title: "Demo en 15 minutos", desc: "Ve el sistema funcionando para tu especialidad." },
                 { icon: "🎯", title: "Personalizada para ti", desc: "Sin demo genérica. Tu flujo, tus módulos." },
-                { icon: "🚀", title: "Activo en 24 horas", desc: "Si decides seguir, configuramos todo nosotros." },
+                { icon: "🚀", title: "Configuración inicial guiada", desc: "Nuestro equipo te acompaña en la configuración para que empieces de forma ordenada." },
                 { icon: "💬", title: "Soporte real en español", desc: "Un equipo humano disponible, no un chatbot." },
               ].map(({ icon, title, desc }) => (
                 <div key={title} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
@@ -191,7 +191,7 @@ export default function LeadFormSection() {
 
                     {/* Trust line */}
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
-                      {["Sin compromiso", "Configuración en 24h", "Sin tarjeta de crédito"].map(t => (
+                      {["Sin compromiso", "Configuración inicial guiada", "Sin tarjeta de crédito"].map(t => (
                         <span key={t} style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 12, color: "#6b7280" }}>
                           <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
                             <path d="M2 6l3 3 5-5" stroke="#16a34a" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />

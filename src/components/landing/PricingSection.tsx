@@ -40,7 +40,7 @@ export default function PricingSection() {
 
         {/* SEO intro */}
         <p style={{ textAlign: "center", fontSize: 15, color: "#6b7280", maxWidth: 520, margin: "0 auto 40px" }}>
-          Rovexca Health es el software para consultorios médicos más accesible de México. Sin contratos anuales, sin costos ocultos y con soporte real en español.
+          Una solución accesible para digitalizar tu consultorio médico. Sin contratos anuales, sin costos ocultos y con soporte real en español.
         </p>
 
         {/* Card */}

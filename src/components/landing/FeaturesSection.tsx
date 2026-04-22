@@ -75,7 +75,7 @@ function BillingVisual() {
           {[
             { l: "Consultas", v: "148", c: "#2563eb" },
             { l: "Facturas CFDI", v: "38", c: "#16a34a" },
-            { l: "Cobros online", v: "92%", c: "#7c3aed" },
+            { l: "Registro ingresos", v: "✓", c: "#7c3aed" },
           ].map(s => (
             <div key={s.l} style={{ background: "#fff", borderRadius: 10, padding: "8px 10px", border: "1px solid #f1f5f9", textAlign: "center" }}>
               <p style={{ fontSize: 9, color: "#9ca3af", marginBottom: 3 }}>{s.l}</p>

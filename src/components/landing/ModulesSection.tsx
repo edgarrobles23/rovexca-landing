@@ -13,7 +13,7 @@ const modules = [
     name: "Rovexca Clinical",
     tagline: "Expediente clínico electrónico en la nube",
     body: "Historial completo del paciente, notas de consulta digitales, adjuntos de estudios e imágenes. El expediente clínico electrónico de tu consultorio, organizado y accesible desde cualquier dispositivo.",
-    features: ["Notas de consulta digitales", "Adjuntos y estudios", "Plantillas por especialidad"],
+    features: ["Registro de consultas médicas", "Historial clínico del paciente", "Adjuntos de estudios e imágenes"],
     color: "#16a34a",
     bg: "#f0fdf4",
   },

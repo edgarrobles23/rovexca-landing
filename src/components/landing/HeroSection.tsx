@@ -129,7 +129,7 @@ export default function HeroSection() {
 
             {/* Subheadline */}
             <p style={{ fontSize: 18, color: "#374151", lineHeight: 1.65, marginBottom: 32, maxWidth: 470 }}>
-              Rovexca Health automatiza tu agenda médica, centraliza el expediente clínico electrónico y controla tus ingresos — todo en un sistema en la nube que médicos de toda México usan desde el primer día.
+              Rovexca Health automatiza tu agenda médica, centraliza el expediente clínico electrónico y controla tus ingresos — todo en un sistema en la nube que médicos de todo México usan desde el primer día.
             </p>
 
             {/* Bullets */}
