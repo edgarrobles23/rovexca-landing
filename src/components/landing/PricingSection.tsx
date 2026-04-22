@@ -82,13 +82,13 @@ export default function PricingSection() {
 
             {/* Crossed price */}
             <p style={{ fontSize: 15, color: "#9ca3af", textDecoration: "line-through", marginBottom: 4 }}>
-              $999 MXN / mes
+              $1,299 MXN / mes
             </p>
 
             {/* Current price */}
             <div style={{ display: "flex", alignItems: "flex-end", gap: 4, marginBottom: 4 }}>
               <span style={{ fontSize: 52, fontWeight: 900, color: "#0f172a", letterSpacing: "-0.03em", lineHeight: 1 }}>
-                $599
+                $799
               </span>
               <div style={{ paddingBottom: 6 }}>
                 <span style={{ fontSize: 16, fontWeight: 600, color: "#6b7280" }}>MXN</span>
@@ -101,7 +101,7 @@ export default function PricingSection() {
               Oferta exclusiva para los primeros 50 consultorios
             </p>
             <p style={{ fontSize: 12, color: "#9ca3af", marginBottom: 28 }}>
-              Sin contrato · Cancela cuando quieras · Precio regular $999 MXN / mes
+              Sin contrato · Cancela cuando quieras · Precio regular $1,299 MXN / mes
             </p>
 
             {/* Divider */}

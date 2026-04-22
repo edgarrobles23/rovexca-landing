@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto cuesta el software para consultorio médico?",
-    a: "Rovexca Health tiene un precio de $599 MXN al mes durante el período de lanzamiento, con acceso completo a todos los módulos: agenda médica digital, expediente clínico electrónico y control de ingresos. Sin contratos anuales ni costos ocultos. Puedes cancelar cuando quieras.",
+    a: "Rovexca Health tiene un precio de $799 MXN al mes durante el período de lanzamiento, con acceso completo a todos los módulos: agenda médica digital, expediente clínico electrónico y control de ingresos. Sin contratos anuales ni costos ocultos. Puedes cancelar cuando quieras.",
   },
 ];
 
