@@ -83,10 +83,10 @@ export default function MetricsSection() {
         <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 52px" }}>
           <div className="badge" style={{ marginBottom: 16 }}>Resultados reales</div>
           <h2 className="heading" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", marginBottom: 14 }}>
-            Números que hablan solos
+            Resultados reales de consultorios médicos en México
           </h2>
           <p style={{ fontSize: 16, color: "#6b7280", lineHeight: 1.6 }}>
-            De médicos que ya transformaron su consultorio con Rovexca Health.
+            Médicos generales, especialistas y clínicas pequeñas ya usan Rovexca Health para gestionar su práctica médica con más eficiencia y menos estrés.
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export default function MetricsSection() {
 
         {/* Source note */}
         <p style={{ textAlign: "center", marginTop: 24, fontSize: 12, color: "#9ca3af" }}>
-          * Basado en datos agregados de usuarios activos de Rovexca Health en México. Resultados pueden variar.
+          * Basado en datos agregados de consultorios médicos activos en Rovexca Health, México. Los resultados individuales pueden variar según el tamaño y tipo de consultorio.
         </p>
       </div>
     </section>

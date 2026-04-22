@@ -122,9 +122,9 @@ export default function LeadFormSection() {
                     <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h3 style={{ fontWeight: 700, fontSize: 20, color: "#0f172a", marginBottom: 10 }}>¡Listo! Te contactamos hoy</h3>
+                <h3 style={{ fontWeight: 700, fontSize: 20, color: "#0f172a", marginBottom: 10 }}>¡Listo! Hemos recibido tu solicitud</h3>
                 <p style={{ fontSize: 15, color: "#6b7280", lineHeight: 1.6 }}>
-                  Nuestro equipo revisará tu solicitud y te escribirá en menos de 24 horas para coordinar la demo.
+                  Te contactaremos en menos de 24 horas para coordinar tu demo. Revisa tu correo — te enviamos una confirmación.
                 </p>
               </div>
             ) : (

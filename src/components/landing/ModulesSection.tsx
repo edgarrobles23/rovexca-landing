@@ -2,17 +2,17 @@ const modules = [
   {
     icon: "📅",
     name: "Rovexca Agenda",
-    tagline: "Nunca más una cita perdida",
-    body: "Agenda inteligente con vista diaria/semanal, recordatorios automáticos por WhatsApp y correo electrónico, y sincronización con Google Calendar.",
-    features: ["Recordatorios automáticos", "Vista multi-médico", "Bloqueo de horarios"],
+    tagline: "Agenda médica digital sin no-shows",
+    body: "Gestiona tu agenda médica con vista diaria y semanal, recordatorios automáticos por WhatsApp y sincronización con Google Calendar. Ideal para médicos que quieren llenar su consulta sin esfuerzo.",
+    features: ["Recordatorios automáticos por WhatsApp", "Vista multi-médico", "Bloqueo de horarios"],
     color: "#2563eb",
     bg: "#eff6ff",
   },
   {
     icon: "📋",
     name: "Rovexca Clinical",
-    tagline: "Expediente digital sin complicaciones",
-    body: "Historial completo del paciente, notas de consulta organizadas, adjuntos de estudios e imágenes. Toda la documentación clínica en un solo lugar.",
+    tagline: "Expediente clínico electrónico en la nube",
+    body: "Historial completo del paciente, notas de consulta digitales, adjuntos de estudios e imágenes. El expediente clínico electrónico de tu consultorio, organizado y accesible desde cualquier dispositivo.",
     features: ["Notas de consulta digitales", "Adjuntos y estudios", "Plantillas por especialidad"],
     color: "#16a34a",
     bg: "#f0fdf4",
@@ -20,17 +20,17 @@ const modules = [
   {
     icon: "💳",
     name: "Rovexca Billing",
-    tagline: "Control de ingresos sin complicaciones",
-    body: "Lleva un control claro de tus ingresos, registra cobros y organiza la información financiera de tu consultorio en un solo lugar.",
-    features: ["Registro de ingresos", "Control de cobros", "Información para facturación"],
+    tagline: "Control financiero del consultorio médico",
+    body: "Registra ingresos, cobros y honorarios por consulta. Organiza la información financiera de tu consultorio médico en un solo lugar — sin Excel, sin cuadernos.",
+    features: ["Registro de ingresos y cobros", "Control de pagos pendientes", "Información para facturación"],
     color: "#d97706",
     bg: "#fffbeb",
   },
   {
     icon: "📊",
     name: "Rovexca Insights",
-    tagline: "Menos ausencias, más control",
-    body: "Dashboard con métricas clave de tu consultorio: citas, ingresos y actividad semanal. Toda la información que necesitas para tomar mejores decisiones.",
+    tagline: "Métricas clave de tu consultorio",
+    body: "Dashboard con métricas clave: citas, ingresos y actividad semanal de tu consultorio médico. Toda la información que necesitas para tomar mejores decisiones de negocio.",
     features: ["Métricas en tiempo real", "Resumen de ingresos", "Actividad del consultorio"],
     color: "#7c3aed",
     bg: "#f5f3ff",
@@ -47,10 +47,11 @@ export default function ModulesSection() {
             Módulos
           </div>
           <h2 className="heading" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", marginBottom: 16, color: "#fff" }}>
-            Un sistema modular que crece contigo
+            Todo lo que tu consultorio médico necesita
+            <br />en un solo sistema
           </h2>
           <p style={{ fontSize: 17, color: "#94a3b8", lineHeight: 1.65 }}>
-            Empieza con lo que necesitas. Activa nuevos módulos sin cambiar de plataforma.
+            Agenda médica, expediente clínico electrónico y control financiero — integrados en una sola plataforma en la nube. Empieza con lo que necesitas y activa más módulos sin cambiar de sistema.
           </p>
         </div>
 

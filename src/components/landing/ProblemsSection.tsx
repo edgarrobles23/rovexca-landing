@@ -56,7 +56,10 @@ export default function ProblemsSection() {
             El desorden administrativo
             <br />te cuesta dinero. Todos los días.
           </h2>
-          <p style={{ fontSize: 17, color: "#6b7280", lineHeight: 1.6 }}>
+          <p style={{ fontSize: 17, color: "#6b7280", lineHeight: 1.6, marginBottom: 12 }}>
+            La mayoría de los consultorios médicos en México siguen usando Excel, papel o aplicaciones desconectadas para gestionar su práctica. El resultado: citas perdidas, expedientes dispersos y finanzas sin control.
+          </p>
+          <p style={{ fontSize: 16, color: "#6b7280", lineHeight: 1.6 }}>
             No es solo estrés. Es dinero que se fuga, tiempo que no recuperas y pacientes que no regresan.
           </p>
         </div>

@@ -9,10 +9,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rovexca Health — Tu consultorio, pero inteligente",
+  title: "Rovexca Health — Software para Consultorios Médicos en México",
   description:
-    "Plataforma de gestión clínica para médicos. Agenda inteligente, expediente digital y control de ingresos. Menos caos, más control.",
-  keywords: ["software médico", "gestión consultorio", "expediente digital", "agenda médica"],
+    "Software para consultorios médicos en México. Agenda médica digital, expediente clínico electrónico y control de ingresos en la nube. Prueba gratis 15 días, sin tarjeta.",
+  keywords: [
+    "software para consultorios médicos",
+    "software médico México",
+    "agenda médica digital",
+    "expediente clínico electrónico",
+    "sistema para consultorios",
+    "software para médicos",
+    "gestión de consultorio médico",
+    "expediente digital médico",
+    "control de pacientes",
+    "software médico en la nube",
+  ],
   icons: {
     icon: [
       { url: "/images/isotipo.png", type: "image/png", sizes: "any" },
@@ -21,10 +32,11 @@ export const metadata: Metadata = {
     apple: "/images/isotipo.png",
   },
   openGraph: {
-    title: "Rovexca Health — Tu consultorio, pero inteligente",
-    description: "Menos caos, más control. La plataforma hecha para médicos que quieren crecer.",
+    title: "Rovexca Health — Software para Consultorios Médicos en México",
+    description: "Agenda médica digital, expediente clínico electrónico y control de ingresos. Prueba gratis 15 días.",
     type: "website",
     locale: "es_MX",
+    siteName: "Rovexca Health",
   },
 };
 

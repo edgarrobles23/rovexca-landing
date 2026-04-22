@@ -48,7 +48,7 @@ export default function TestimonialSection() {
             Médicos que ya lo transformaron
           </h2>
           <p style={{ fontSize: 17, color: "#6b7280", lineHeight: 1.65 }}>
-            No lo decimos nosotros. Lo dicen quienes ya usan Rovexca Health todos los días.
+            Más de 500 médicos en México ya gestionan su consultorio con Rovexca Health — desde consultorios privados hasta clínicas pequeñas. Aquí lo que dicen.
           </p>
         </div>
 

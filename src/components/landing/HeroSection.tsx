@@ -122,22 +122,22 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1 className="heading" style={{ fontSize: "clamp(2.1rem, 4.5vw, 3.1rem)", marginBottom: 20, lineHeight: 1.08 }}>
-              Recupera 3 horas al día.
+              Software para consultorios médicos en México.
               <br />
-              <span style={{ color: "#2563eb" }}>Aumenta tus ingresos 30%.</span>
+              <span style={{ color: "#2563eb" }}>Menos caos. Más ingresos.</span>
             </h1>
 
             {/* Subheadline */}
             <p style={{ fontSize: 18, color: "#374151", lineHeight: 1.65, marginBottom: 32, maxWidth: 470 }}>
-              Rovexca Health automatiza tu agenda, centraliza expedientes y controla tus finanzas — todo en un sistema que médicos como tú usan desde el primer día.
+              Rovexca Health automatiza tu agenda médica, centraliza el expediente clínico electrónico y controla tus ingresos — todo en un sistema en la nube que médicos de toda México usan desde el primer día.
             </p>
 
             {/* Bullets */}
             <ul style={{ display: "flex", flexDirection: "column", gap: 11, marginBottom: 36 }}>
               {[
-                "Cero no-shows: recordatorios automáticos por WhatsApp",
-                "Expediente clínico digital organizado y siempre accesible",
-                "Ve cuánto ganas — en tiempo real, sin Excel",
+                "Agenda médica digital con recordatorios automáticos por WhatsApp",
+                "Expediente clínico electrónico organizado y siempre accesible",
+                "Control de pacientes e ingresos en tiempo real, sin Excel",
               ].map(t => (
                 <li key={t} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
                   <CheckCircle style={{ width: 18, height: 18, color: "#16a34a", flexShrink: 0, marginTop: 2 }} strokeWidth={2.5} />

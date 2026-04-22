@@ -132,31 +132,31 @@ function ClinicalVisual() {
 
 const features = [
   {
-    tag: "📅  Agenda inteligente",
+    tag: "📅  Agenda médica digital",
     tagColor: "#2563eb",
     tagBg: "#eff6ff",
-    title: "Llena tu agenda. Elimina los no-shows.",
-    sub: "Tu tiempo vale dinero. Cada cita perdida es ingreso que no entra.",
+    title: "Agenda médica digital que elimina los no-shows.",
+    sub: "La agenda inteligente de Rovexca Health automatiza recordatorios por WhatsApp y correo, para que cada cita confirmada se traduzca en ingreso real para tu consultorio.",
     bullets: [
       "Recordatorios automáticos por WhatsApp y correo electrónico",
-      "Confirmación con un clic para el paciente",
-      "Sincronización con Google Calendar",
-      "Vista multi-médico si tienes equipo",
+      "Confirmación de cita con un clic para el paciente",
+      "Sincronización con Google Calendar en tiempo real",
+      "Vista multi-médico para consultorios con equipo",
     ],
     cta: "Ver Rovexca Agenda",
     visual: <AgendaVisual />,
     imgLeft: false,
   },
   {
-    tag: "💳  Control financiero",
+    tag: "💳  Control financiero del consultorio",
     tagColor: "#16a34a",
     tagBg: "#f0fdf4",
-    title: "Conoce exactamente cuánto entra en tu consultorio.",
-    sub: "Sin orden no hay crecimiento. Con Rovexca Billing tienes tu información financiera siempre organizada.",
+    title: "Control de ingresos claro y organizado, sin hojas de cálculo.",
+    sub: "Rovexca Billing centraliza el control financiero de tu consultorio médico. Registra honorarios, cobros y pagos pendientes — toda la información organizada para que tomes mejores decisiones.",
     bullets: [
       "Registro de ingresos y honorarios por consulta",
-      "Control de cobros y pagos pendientes",
-      "Información financiera organizada para seguimiento",
+      "Control de cobros y pagos pendientes por paciente",
+      "Información financiera del consultorio siempre organizada",
       "Datos fiscales del paciente para facilitar tu facturación",
     ],
     cta: "Ver Rovexca Billing",
@@ -164,16 +164,16 @@ const features = [
     imgLeft: true,
   },
   {
-    tag: "📋  Expediente clínico",
+    tag: "📋  Expediente clínico electrónico",
     tagColor: "#7c3aed",
     tagBg: "#f5f3ff",
-    title: "Expediente clínico digital en una sola plataforma.",
-    sub: "Todo el historial de tus pacientes organizado, centralizado y accesible cuando lo necesitas.",
+    title: "Expediente clínico electrónico en una sola plataforma en la nube.",
+    sub: "Olvídate del papel y los archivos dispersos. Rovexca Clinical centraliza el historial completo de cada paciente — notas, estudios e imágenes — accesible desde cualquier dispositivo, en segundos.",
     bullets: [
-      "Notas de consulta organizadas por fecha y paciente",
-      "Adjuntos: estudios, imágenes, recetas digitales",
-      "Historial completo accesible en segundos",
-      "Información disponible desde cualquier dispositivo",
+      "Notas de consulta digitales organizadas por fecha y paciente",
+      "Adjuntos de estudios, imágenes y recetas digitales",
+      "Historial clínico completo accesible en segundos",
+      "Sistema médico en la nube, disponible desde cualquier dispositivo",
     ],
     cta: "Ver Rovexca Clinical",
     visual: <ClinicalVisual />,
@@ -189,11 +189,11 @@ export default function FeaturesSection() {
         <div style={{ textAlign: "center", maxWidth: 580, margin: "0 auto 80px" }}>
           <div className="badge" style={{ marginBottom: 16 }}>La solución</div>
           <h2 className="heading" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", marginBottom: 16 }}>
-            Todo lo que necesitas
-            <br />para que tu consultorio funcione solo
+            El sistema para consultorios médicos
+            <br />que funciona desde el primer día
           </h2>
           <p style={{ fontSize: 17, color: "#6b7280", lineHeight: 1.6 }}>
-            Sin curva de aprendizaje. Sin configuración complicada. Sin necesitar un ingeniero.
+            Software médico en la nube, sin curva de aprendizaje, sin instalaciones y sin necesitar un técnico. Solo entra y empieza.
           </p>
         </div>
 
