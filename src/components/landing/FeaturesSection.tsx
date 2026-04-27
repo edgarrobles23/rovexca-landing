@@ -167,7 +167,7 @@ function ChronicVisual() {
   const stats = [
     { label: "Vencidos", value: 1, color: "#dc2626", bg: "#fef2f2", border: "#fecaca" },
     { label: "Próximos", value: 2, color: "#d97706", bg: "#fffbeb", border: "#fde68a" },
-    { label: "Al día", value: 3, color: "#16a34a", bg: "#f0fdf4", border: "#bbf7d0" },
+    { label: "Al día", value: 2, color: "#16a34a", bg: "#f0fdf4", border: "#bbf7d0" },
     { label: "Sin historial", value: 0, color: "#6b7280", bg: "#f8fafc", border: "#e5e7eb" },
   ];
   const rows = [
@@ -207,7 +207,7 @@ function ChronicVisual() {
           padding: "10px 16px", alignItems: "center",
           borderBottom: i < rows.length - 1 ? "1px solid #f1f5f9" : "none",
         }}>
-          <span style={{ fontWeight: 600, color: "#0f172a", fontSize: 12 }}>{name}</span>
+          <span style={{ fontWeight: 600, color: "#0f172a", fontSize: 12, filter: "blur(4px)", userSelect: "none" }}>{name}</span>
           <span style={{ display: "inline-block", background: condColor, color: condText, padding: "2px 8px", borderRadius: 99, fontSize: 10, fontWeight: 600, width: "fit-content" }}>{cond}</span>
           <span style={{ color: "#6b7280" }}>{ultima}</span>
           <span style={{ display: "inline-block", background: estadoBg, color: estadoColor, padding: "2px 8px", borderRadius: 99, fontSize: 10, fontWeight: 700, width: "fit-content" }}>{estado}</span>

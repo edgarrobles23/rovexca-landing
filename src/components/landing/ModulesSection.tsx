@@ -35,6 +35,24 @@ const modules = [
     color: "#7c3aed",
     bg: "#f5f3ff",
   },
+  {
+    icon: "🏥",
+    name: "Rovexca Surgical",
+    tagline: "Programación de cirugías y coordinación con hospitales",
+    body: "Registra y da seguimiento a procedimientos quirúrgicos coordinando fechas con hospitales. Mantén visibilidad del estado de cada caso desde una sola plataforma.",
+    features: ["Registro de procedimientos", "Coordinación con hospitales", "Seguimiento por paciente"],
+    color: "#0891b2",
+    bg: "#ecfeff",
+  },
+  {
+    icon: "🔄",
+    name: "Rovexca Care",
+    tagline: "Seguimiento de pacientes crónicos y control clínico",
+    body: "Gestiona pacientes con padecimientos crónicos registrando su evolución, próximas citas y estado de seguimiento. Toda la información organizada y accesible.",
+    features: ["Estado por paciente (al día / vencido)", "Historial de consultas", "Recordatorios de seguimiento"],
+    color: "#059669",
+    bg: "#ecfdf5",
+  },
 ];
 
 export default function ModulesSection() {

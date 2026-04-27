@@ -2,12 +2,47 @@
 
 const openTrial = () => window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
 
-const benefits = [
-  "Incluye hasta 3 usuarios",
-  "Agenda inteligente con recordatorios por WhatsApp (integración incluida)",
-  "Expediente clínico digital",
-  "Control de ingresos en tiempo real",
-  "Soporte en español",
+const groups = [
+  {
+    label: "Operación diaria",
+    items: [
+      "Agenda médica con recordatorios por WhatsApp",
+      "Gestión de pacientes",
+      "Vista multi-médico",
+    ],
+  },
+  {
+    label: "Expediente clínico",
+    items: [
+      "Registro de consultas médicas",
+      "Historial clínico del paciente",
+      "Adjuntos de estudios e imágenes",
+    ],
+  },
+  {
+    label: "Control financiero",
+    items: [
+      "Registro de ingresos y cobros",
+      "Control de pagos pendientes",
+      "Información para facturación",
+    ],
+  },
+  {
+    label: "Gestión avanzada",
+    items: [
+      "Métricas clave del consultorio",
+      "Programación y seguimiento de cirugías",
+      "Seguimiento de pacientes crónicos",
+    ],
+  },
+  {
+    label: "Incluido",
+    items: [
+      "Hasta 3 usuarios",
+      "Soporte en español",
+      "Acceso en la nube",
+    ],
+  },
 ];
 
 function Check() {
@@ -82,7 +117,7 @@ export default function PricingSection() {
 
             {/* Crossed price */}
             <p style={{ fontSize: 15, color: "#9ca3af", textDecoration: "line-through", marginBottom: 4 }}>
-              $1,299 MXN / mes
+              $1,599 MXN / mes
             </p>
 
             {/* Current price */}
@@ -101,21 +136,33 @@ export default function PricingSection() {
               Oferta exclusiva para los primeros 50 consultorios
             </p>
             <p style={{ fontSize: 12, color: "#9ca3af", marginBottom: 28 }}>
-              Sin contrato · Cancela cuando quieras · Precio regular $1,299 MXN / mes
+              Sin contrato · Cancela cuando quieras · Precio regular $1,599 MXN / mes
             </p>
 
             {/* Divider */}
             <div style={{ height: 1, background: "#f1f5f9", marginBottom: 24 }} />
 
             {/* Benefits */}
-            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 14, marginBottom: 32 }}>
-              {benefits.map((b) => (
-                <li key={b} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <Check />
-                  <span style={{ fontSize: 15, color: "#374151" }}>{b}</span>
-                </li>
+            <p style={{ fontSize: 13, fontWeight: 700, color: "#0f172a", marginBottom: 16 }}>
+              Incluye todo lo necesario para gestionar tu consultorio:
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 32 }}>
+              {groups.map(({ label, items }) => (
+                <div key={label}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 10 }}>
+                    {label}
+                  </p>
+                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
+                    {items.map((b) => (
+                      <li key={b} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                        <Check />
+                        <span style={{ fontSize: 14, color: "#374151" }}>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
 
             {/* CTA */}
             <button
