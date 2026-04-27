@@ -2,6 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import ProblemsSection from "@/components/landing/ProblemsSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
+import ClinicalCapabilitiesSection from "@/components/landing/ClinicalCapabilitiesSection";
 import ModulesSection from "@/components/landing/ModulesSection";
 import MetricsSection from "@/components/landing/MetricsSection";
 import TestimonialSection from "@/components/landing/TestimonialSection";
@@ -22,6 +23,7 @@ export default function Home() {
         <HeroSection />
         <ProblemsSection />
         <FeaturesSection />
+        <ClinicalCapabilitiesSection />
         <ModulesSection />
         <MetricsSection />
         <TestimonialSection />

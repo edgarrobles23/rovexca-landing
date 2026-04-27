@@ -130,6 +130,97 @@ function ClinicalVisual() {
   );
 }
 
+function SurgeryVisual() {
+  const cases = [
+    { patient: "Carlos Mendoza", proc: "Colecistectomía laparoscópica", date: "12 May", status: "Confirmada", sc: "#dcfce7", st: "#16a34a" },
+    { patient: "Ana Pérez", proc: "Artroscopia de rodilla", date: "18 May", status: "Pendiente", sc: "#fef9c3", st: "#92400e" },
+    { patient: "Luis Ramírez", proc: "Hernioplastia inguinal", date: "24 May", status: "En coordinación", sc: "#dbeafe", st: "#2563eb" },
+  ];
+  return (
+    <div style={{ background: "#f8fafc", border: "1.5px solid #e5e7eb", borderRadius: 18, overflow: "hidden" }}>
+      <div style={{ padding: "14px 20px", borderBottom: "1px solid #e5e7eb", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <p style={{ fontWeight: 700, fontSize: 13, color: "#0f172a" }}>Cirugías programadas · Mayo</p>
+        <span style={{ fontSize: 11, fontWeight: 700, color: "#2563eb", background: "#dbeafe", padding: "3px 10px", borderRadius: 999 }}>3 este mes</span>
+      </div>
+      <div style={{ padding: "12px 20px" }}>
+        {cases.map((c, i) => (
+          <div key={c.patient} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 0", borderBottom: i < 2 ? "1px solid #f1f5f9" : "none" }}>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#0f172a" }}>{c.patient}</p>
+              <p style={{ fontSize: 11, color: "#9ca3af" }}>{c.proc}</p>
+            </div>
+            <div style={{ textAlign: "right", flexShrink: 0 }}>
+              <p style={{ fontSize: 11, fontWeight: 700, color: "#374151", marginBottom: 3 }}>{c.date}</p>
+              <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 999, background: c.sc, color: c.st }}>{c.status}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style={{ padding: "12px 20px", background: "#eff6ff", borderTop: "1px solid #dbeafe" }}>
+        <p style={{ fontSize: 12, color: "#1e40af", fontWeight: 600 }}>✓ Coordinación con hospital centralizada en una sola vista</p>
+      </div>
+    </div>
+  );
+}
+
+function ChronicVisual() {
+  const stats = [
+    { label: "Vencidos", value: 1, color: "#dc2626", bg: "#fef2f2", border: "#fecaca" },
+    { label: "Próximos", value: 2, color: "#d97706", bg: "#fffbeb", border: "#fde68a" },
+    { label: "Al día", value: 3, color: "#16a34a", bg: "#f0fdf4", border: "#bbf7d0" },
+    { label: "Sin historial", value: 0, color: "#6b7280", bg: "#f8fafc", border: "#e5e7eb" },
+  ];
+  const rows = [
+    { name: "Sofía Martínez", cond: "Enfermedad renal crónica", condColor: "#fef2f2", condText: "#dc2626", ultima: "23 mar 2026", estado: "Vencido", estadoColor: "#dc2626", estadoBg: "#fef2f2" },
+    { name: "Génesis Ávila", cond: "Diabetes mellitus tipo 1", condColor: "#f0fdf4", condText: "#16a34a", ultima: "5 abr 2026", estado: "Al día", estadoColor: "#16a34a", estadoBg: "#f0fdf4" },
+    { name: "Dolores Nava", cond: "Diabetes mellitus tipo 2", condColor: "#f0fdf4", condText: "#16a34a", ultima: "24 abr 2026", estado: "Al día", estadoColor: "#16a34a", estadoBg: "#f0fdf4" },
+  ];
+  return (
+    <div style={{ background: "#fff", border: "1.5px solid #e5e7eb", borderRadius: 18, overflow: "hidden", fontSize: 12 }}>
+      {/* Header */}
+      <div style={{ padding: "14px 20px", borderBottom: "1px solid #e5e7eb" }}>
+        <p style={{ fontWeight: 700, fontSize: 13, color: "#0f172a", marginBottom: 2 }}>Seguimiento clínico</p>
+        <p style={{ fontSize: 11, color: "#9ca3af" }}>Pacientes con antecedentes patológicos que requieren seguimiento periódico.</p>
+      </div>
+
+      {/* Stat cards */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, borderBottom: "1px solid #e5e7eb" }}>
+        {stats.map(({ label, value, color, bg, border }) => (
+          <div key={label} style={{ padding: "12px 14px", background: bg, borderRight: `1px solid ${border}` }}>
+            <p style={{ fontSize: 20, fontWeight: 800, color, lineHeight: 1 }}>{value}</p>
+            <p style={{ fontSize: 10, color, fontWeight: 600, marginTop: 2 }}>{label}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Table header */}
+      <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1.6fr 1fr 0.8fr", padding: "8px 16px", background: "#f8fafc", borderBottom: "1px solid #e5e7eb" }}>
+        {["PACIENTE", "CONDICIÓN", "ÚLTIMA CITA", "ESTADO"].map(h => (
+          <span key={h} style={{ fontSize: 9, fontWeight: 700, color: "#9ca3af", letterSpacing: "0.05em" }}>{h}</span>
+        ))}
+      </div>
+
+      {/* Rows */}
+      {rows.map(({ name, cond, condColor, condText, ultima, estado, estadoColor, estadoBg }, i) => (
+        <div key={name} style={{
+          display: "grid", gridTemplateColumns: "1.4fr 1.6fr 1fr 0.8fr",
+          padding: "10px 16px", alignItems: "center",
+          borderBottom: i < rows.length - 1 ? "1px solid #f1f5f9" : "none",
+        }}>
+          <span style={{ fontWeight: 600, color: "#0f172a", fontSize: 12 }}>{name}</span>
+          <span style={{ display: "inline-block", background: condColor, color: condText, padding: "2px 8px", borderRadius: 99, fontSize: 10, fontWeight: 600, width: "fit-content" }}>{cond}</span>
+          <span style={{ color: "#6b7280" }}>{ultima}</span>
+          <span style={{ display: "inline-block", background: estadoBg, color: estadoColor, padding: "2px 8px", borderRadius: 99, fontSize: 10, fontWeight: 700, width: "fit-content" }}>{estado}</span>
+        </div>
+      ))}
+
+      <div style={{ padding: "10px 16px", background: "#f0fdf4", borderTop: "1px solid #bbf7d0" }}>
+        <p style={{ fontSize: 11, color: "#15803d", fontWeight: 600 }}>↑ Historial y evolución de cada paciente en un solo lugar</p>
+      </div>
+    </div>
+  );
+}
+
 const features = [
   {
     tag: "📅  Agenda médica digital",
@@ -177,6 +268,38 @@ const features = [
     ],
     cta: "Ver Rovexca Clinical",
     visual: <ClinicalVisual />,
+    imgLeft: false,
+  },
+  {
+    tag: "🏥  Programación de cirugías",
+    tagColor: "#0891b2",
+    tagBg: "#ecfeff",
+    title: "Programación de cirugías coordinada desde tu consultorio.",
+    sub: "Coordina la programación de cirugías con hospitales, gestionando fechas, disponibilidad y seguimiento desde una sola plataforma. Sin llamadas ni hojas de papel.",
+    bullets: [
+      "Registro y seguimiento de procedimientos quirúrgicos por paciente",
+      "Coordinación de fechas con hospitales desde el sistema",
+      "Visibilidad del estado de cada caso en tiempo real",
+      "Historial de cirugías vinculado al expediente clínico del paciente",
+    ],
+    cta: "Conocer más",
+    visual: <SurgeryVisual />,
+    imgLeft: true,
+  },
+  {
+    tag: "🔄  Seguimiento de pacientes crónicos",
+    tagColor: "#059669",
+    tagBg: "#ecfdf5",
+    title: "Seguimiento continuo de pacientes con padecimientos crónicos.",
+    sub: "Da continuidad al tratamiento de pacientes con padecimientos crónicos mediante recordatorios, historial clínico y seguimiento estructurado. Toda la evolución del paciente en un solo lugar.",
+    bullets: [
+      "Registro de evolución clínica por consulta y fecha",
+      "Recordatorios automáticos para citas de seguimiento",
+      "Historial de tratamientos y estudios organizado por paciente",
+      "Control de pacientes activos con padecimientos de largo plazo",
+    ],
+    cta: "Conocer más",
+    visual: <ChronicVisual />,
     imgLeft: false,
   },
 ];
