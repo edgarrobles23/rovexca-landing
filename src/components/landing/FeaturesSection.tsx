@@ -18,7 +18,7 @@ function AgendaVisual() {
   return (
     <div style={{ background: "#f8fafc", border: "1.5px solid #e5e7eb", borderRadius: 18, overflow: "hidden" }}>
       <div style={{ padding: "14px 20px", borderBottom: "1px solid #e5e7eb", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <p style={{ fontWeight: 700, fontSize: 13, color: "#0f172a" }}>Agenda · Miércoles 13</p>
+        <p style={{ fontWeight: 700, fontSize: 13, color: "#0f172a" }}>Agenda · Miércoles 7</p>
         <span style={{ fontSize: 11, fontWeight: 700, color: "#16a34a", background: "#dcfce7", padding: "3px 10px", borderRadius: 999 }}>12 confirmadas ✓</span>
       </div>
       <div style={{ padding: "12px 20px" }}>
@@ -35,7 +35,7 @@ function AgendaVisual() {
           }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: "#9ca3af", width: 36, flexShrink: 0 }}>{a.t}</p>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <p style={{ fontSize: 13, fontWeight: 600, color: "#0f172a" }}>{a.name}</p>
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#0f172a", filter: "blur(4px)", userSelect: "none" }}>{a.name}</p>
               <p style={{ fontSize: 11, color: "#9ca3af" }}>{a.tipo}</p>
             </div>
             <span style={{ fontSize: 10, fontWeight: 700, padding: "3px 9px", borderRadius: 999, background: a.sc, color: a.st, flexShrink: 0 }}>{a.status}</span>
@@ -146,7 +146,7 @@ function SurgeryVisual() {
         {cases.map((c, i) => (
           <div key={c.patient} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 0", borderBottom: i < 2 ? "1px solid #f1f5f9" : "none" }}>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <p style={{ fontSize: 13, fontWeight: 600, color: "#0f172a" }}>{c.patient}</p>
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#0f172a", filter: "blur(4px)", userSelect: "none" }}>{c.patient}</p>
               <p style={{ fontSize: 11, color: "#9ca3af" }}>{c.proc}</p>
             </div>
             <div style={{ textAlign: "right", flexShrink: 0 }}>
