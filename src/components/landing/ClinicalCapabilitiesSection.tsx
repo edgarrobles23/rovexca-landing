@@ -5,20 +5,30 @@ const openTrial = () => window.dispatchEvent(new CustomEvent("rovexca:open-trial
 const capabilities = [
   {
     icon: "🏥",
-    title: "Programación de cirugías",
-    desc: "Organiza y da seguimiento a procedimientos quirúrgicos coordinando fechas con hospitales y manteniendo visibilidad del estado de cada caso.",
+    title: "Coordinación quirúrgica sin llamadas ni intermediarios",
+    desc: "Gestiona solicitudes, reprogramaciones y confirmaciones con hospitales desde un flujo digital centralizado.",
     color: "#0891b2",
     bg: "#ecfeff",
     border: "#a5f3fc",
   },
   {
     icon: "🔄",
-    title: "Seguimiento de pacientes crónicos",
-    desc: "Mantén control continuo sobre pacientes con enfermedades crónicas, registrando evolución, citas y seguimiento clínico desde una sola plataforma.",
+    title: "Seguimiento automático de pacientes después de la consulta",
+    desc: "Rovexca contacta a tus pacientes automáticamente para asegurar continuidad en su tratamiento y evitar abandono.",
     color: "#059669",
     bg: "#ecfdf5",
     border: "#a7f3d0",
   },
+];
+
+const flow = [
+  "Paciente escribe por WhatsApp",
+  "Agenda automáticamente",
+  "Recibe recordatorio",
+  "Confirma o reagenda",
+  "Asiste a consulta",
+  "Recibe seguimiento",
+  "Agenda nuevamente",
 ];
 
 export default function ClinicalCapabilitiesSection() {
@@ -28,10 +38,10 @@ export default function ClinicalCapabilitiesSection() {
         <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 52px" }}>
           <div className="badge" style={{ marginBottom: 16 }}>Gestión clínica avanzada</div>
           <h2 className="heading" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", marginBottom: 16 }}>
-            Más que una agenda: gestión completa del paciente
+            Automatiza todo el ciclo del paciente
           </h2>
           <p style={{ fontSize: 17, color: "#6b7280", lineHeight: 1.65 }}>
-            Rovexca Health va más allá de agendar citas. Soporta flujos clínicos complejos para que puedas gestionar cada tipo de paciente desde una sola plataforma.
+            Desde el primer mensaje hasta el seguimiento clínico, Rovexca gestiona cada etapa sin intervención manual.
           </p>
         </div>
 
@@ -65,6 +75,34 @@ export default function ClinicalCapabilitiesSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Flow subsection */}
+        <div style={{ maxWidth: 560, margin: "0 auto 48px", textAlign: "center" }}>
+          <p style={{ fontSize: 15, fontWeight: 700, color: "#0f172a", marginBottom: 24 }}>
+            Así funciona en la práctica
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+            {flow.map((step, i) => (
+              <div key={step} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <div style={{
+                  background: "#fff",
+                  border: "1.5px solid #e5e7eb",
+                  borderRadius: 10,
+                  padding: "10px 24px",
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "#0f172a",
+                  boxShadow: "0 2px 8px rgba(15,23,42,0.04)",
+                }}>
+                  {step}
+                </div>
+                {i < flow.length - 1 && (
+                  <div style={{ fontSize: 18, color: "#2563eb", lineHeight: 1, padding: "4px 0" }}>↓</div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div style={{ textAlign: "center" }}>

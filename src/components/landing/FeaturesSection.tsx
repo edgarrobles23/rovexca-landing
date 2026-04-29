@@ -226,11 +226,11 @@ const features = [
     tag: "📅  Agenda médica digital",
     tagColor: "#2563eb",
     tagBg: "#eff6ff",
-    title: "Agenda médica digital que elimina los no-shows.",
-    sub: "La agenda inteligente de Rovexca Health automatiza recordatorios por WhatsApp y correo, para que cada cita confirmada se traduzca en ingreso real para tu consultorio.",
+    title: "Agenda médica que reduce inasistencias automáticamente.",
+    sub: "Rovexca confirma, recuerda y gestiona citas por WhatsApp para asegurar que cada cita programada se convierta en ingreso real.",
     bullets: [
+      "Confirmación de asistencia directamente desde WhatsApp",
       "Recordatorios automáticos por WhatsApp y correo electrónico",
-      "Confirmación de cita con un clic para el paciente",
       "Sincronización con Google Calendar en tiempo real",
       "Vista multi-médico para consultorios con equipo",
     ],
@@ -242,8 +242,8 @@ const features = [
     tag: "💳  Control financiero del consultorio",
     tagColor: "#16a34a",
     tagBg: "#f0fdf4",
-    title: "Control de ingresos claro y organizado, sin hojas de cálculo.",
-    sub: "Rovexca Billing centraliza el control financiero de tu consultorio médico. Registra honorarios, cobros y pagos pendientes — toda la información organizada para que tomes mejores decisiones.",
+    title: "Control financiero conectado a tu operación clínica.",
+    sub: "Cada cita confirmada, atendida o cancelada impacta automáticamente tus ingresos y reportes.",
     bullets: [
       "Registro de ingresos y honorarios por consulta",
       "Control de cobros y pagos pendientes por paciente",
@@ -258,8 +258,8 @@ const features = [
     tag: "📋  Expediente clínico electrónico",
     tagColor: "#7c3aed",
     tagBg: "#f5f3ff",
-    title: "Expediente clínico electrónico en una sola plataforma en la nube.",
-    sub: "Olvídate del papel y los archivos dispersos. Rovexca Clinical centraliza el historial completo de cada paciente — notas, estudios e imágenes — accesible desde cualquier dispositivo, en segundos.",
+    title: "Expediente clínico conectado a cada interacción con el paciente.",
+    sub: "Cada cita, seguimiento y procedimiento queda registrado automáticamente en el historial del paciente.",
     bullets: [
       "Notas de consulta digitales organizadas por fecha y paciente",
       "Adjuntos de estudios, imágenes y recetas digitales",
@@ -274,8 +274,8 @@ const features = [
     tag: "🏥  Programación de cirugías",
     tagColor: "#0891b2",
     tagBg: "#ecfeff",
-    title: "Programación de cirugías coordinada desde tu consultorio.",
-    sub: "Coordina la programación de cirugías con hospitales, gestionando fechas, disponibilidad y seguimiento desde una sola plataforma. Sin llamadas ni hojas de papel.",
+    title: "Coordinación quirúrgica sin llamadas ni intermediarios.",
+    sub: "Gestiona solicitudes, reprogramaciones y confirmaciones con hospitales desde un flujo digital centralizado.",
     bullets: [
       "Registro y seguimiento de procedimientos quirúrgicos por paciente",
       "Coordinación de fechas con hospitales desde el sistema",
@@ -290,10 +290,10 @@ const features = [
     tag: "🔄  Seguimiento de pacientes crónicos",
     tagColor: "#059669",
     tagBg: "#ecfdf5",
-    title: "Seguimiento continuo de pacientes con padecimientos crónicos.",
-    sub: "Da continuidad al tratamiento de pacientes con padecimientos crónicos mediante recordatorios, historial clínico y seguimiento estructurado. Toda la evolución del paciente en un solo lugar.",
+    title: "Seguimiento automático de pacientes después de la consulta.",
+    sub: "Rovexca contacta a tus pacientes automáticamente para asegurar continuidad en su tratamiento y evitar abandono.",
     bullets: [
-      "Registro de evolución clínica por consulta y fecha",
+      "Re-activación automática de pacientes inactivos",
       "Recordatorios automáticos para citas de seguimiento",
       "Historial de tratamientos y estudios organizado por paciente",
       "Control de pacientes activos con padecimientos de largo plazo",
@@ -316,7 +316,7 @@ export default function FeaturesSection() {
             <br />que funciona desde el primer día
           </h2>
           <p style={{ fontSize: 17, color: "#6b7280", lineHeight: 1.6 }}>
-            Software médico en la nube, sin curva de aprendizaje, sin instalaciones y sin necesitar un técnico. Solo entra y empieza.
+            Automatiza citas, recordatorios, confirmaciones y seguimiento de pacientes desde el primer día, usando WhatsApp como canal principal.
           </p>
         </div>
 
