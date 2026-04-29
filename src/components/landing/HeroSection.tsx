@@ -124,7 +124,9 @@ export default function HeroSection() {
             <h1 className="heading" style={{ fontSize: "clamp(2.1rem, 4.5vw, 3.1rem)", marginBottom: 20, lineHeight: 1.08 }}>
               Software para consultorios médicos en México.
               <br />
-              <span style={{ color: "#2563eb" }}>Menos caos. Más ingresos.</span>
+              <span style={{ color: "#2563eb" }}>Automatiza citas, recordatorios y seguimiento por WhatsApp.</span>
+              <br />
+              Menos caos. Más ingresos.
             </h1>
 
             {/* Subheadline */}
@@ -135,9 +137,9 @@ export default function HeroSection() {
             {/* Bullets */}
             <ul style={{ display: "flex", flexDirection: "column", gap: 11, marginBottom: 36 }}>
               {[
-                "Agenda médica digital con recordatorios automáticos por WhatsApp",
-                "Expediente clínico electrónico organizado y siempre accesible",
-                "Control de pacientes e ingresos en tiempo real, sin Excel",
+                "Automatiza citas y recordatorios por WhatsApp (sin llamadas)",
+                "Confirma, cancela y reagenda citas automáticamente",
+                "Lleva expediente clínico y control de ingresos en un solo sistema",
               ].map(t => (
                 <li key={t} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
                   <CheckCircle style={{ width: 18, height: 18, color: "#16a34a", flexShrink: 0, marginTop: 2 }} strokeWidth={2.5} />

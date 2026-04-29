@@ -7,6 +7,7 @@ const problems = [
     ),
     iconBg: "#fef2f2",
     title: "Citas que se caen solas",
+    subtitle: "Porque nadie las confirma automáticamente",
     stat: "Hasta $8,000/mes perdidos",
     body: "Cada no-show sin recordatorio es dinero que no entra. Sin automatización, dependes de que el paciente se acuerde.",
   },
@@ -18,6 +19,7 @@ const problems = [
     ),
     iconBg: "#fffbeb",
     title: "Expedientes en todos lados",
+    subtitle: "Porque usas múltiples sistemas sin integración",
     stat: "20 min buscando por consulta",
     body: "Notas en papel, estudios por WhatsApp, historial en otro sistema. Cuando lo necesitas urgente, no está.",
   },
@@ -29,6 +31,7 @@ const problems = [
     ),
     iconBg: "#f5f3ff",
     title: "No sabes cuánto ganas",
+    subtitle: "Porque no tienes visibilidad en tiempo real",
     stat: "Sin datos = sin decisiones",
     body: "¿Cuál es tu ingreso real este mes? ¿Qué días rindes más? Sin números claros, tu consultorio no crece.",
   },
@@ -40,6 +43,7 @@ const problems = [
     ),
     iconBg: "#eff6ff",
     title: "Horas fuera de horario",
+    subtitle: "Porque haces tareas que deberían ser automáticas",
     stat: "3 horas/día en admin",
     body: "Facturas, seguimientos manuales, recordatorios. Tiempo tuyo que deberías estar con tu familia — o descansando.",
   },
@@ -66,7 +70,7 @@ export default function ProblemsSection() {
 
         {/* Cards */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
-          {problems.map(({ icon, iconBg, title, stat, body }) => (
+          {problems.map(({ icon, iconBg, title, subtitle, stat, body }) => (
             <div key={title} className="card" style={{ padding: 28 }}>
               {/* Icon */}
               <span style={{ width: 44, height: 44, borderRadius: 12, background: iconBg, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18 }}>
@@ -76,11 +80,18 @@ export default function ProblemsSection() {
               <span style={{ display: "inline-block", fontSize: 11, fontWeight: 700, color: "#dc2626", background: "#fef2f2", padding: "3px 10px", borderRadius: 999, marginBottom: 10 }}>
                 {stat}
               </span>
-              <h3 style={{ fontWeight: 700, fontSize: 16, color: "#0f172a", marginBottom: 8 }}>{title}</h3>
+              <h3 style={{ fontWeight: 700, fontSize: 16, color: "#0f172a", marginBottom: 4 }}>{title}</h3>
+              <p style={{ fontSize: 12, fontWeight: 600, color: "#9ca3af", marginBottom: 10 }}>{subtitle}</p>
               <p style={{ fontSize: 14, color: "#6b7280", lineHeight: 1.6 }}>{body}</p>
             </div>
           ))}
         </div>
+
+        {/* Automation bridge text */}
+        <p style={{ textAlign: "center", fontSize: 15, color: "#6b7280", maxWidth: 520, margin: "32px auto 0", lineHeight: 1.7 }}>
+          La mayoría de estos problemas existen porque dependen de procesos manuales.<br />
+          <strong style={{ color: "#0f172a" }}>Rovexca los automatiza completamente usando WhatsApp.</strong>
+        </p>
 
         {/* Bridge banner */}
         <div style={{
@@ -96,7 +107,7 @@ export default function ProblemsSection() {
         }}>
           <div>
             <p style={{ fontSize: 17, color: "#fff", fontWeight: 700, marginBottom: 4 }}>
-              Rovexca Health elimina cada uno de estos problemas.
+              Rovexca automatiza tu consultorio con WhatsApp, agenda inteligente y seguimiento clínico.
             </p>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)" }}>
               Un sistema. Todo resuelto. Desde el primer día.
