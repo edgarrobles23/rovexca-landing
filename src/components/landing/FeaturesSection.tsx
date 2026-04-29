@@ -227,7 +227,7 @@ const features = [
     tagColor: "#2563eb",
     tagBg: "#eff6ff",
     title: "Agenda médica que reduce inasistencias automáticamente.",
-    sub: "Rovexca confirma, recuerda y gestiona citas por WhatsApp para asegurar que cada cita programada se convierta en ingreso real.",
+    sub: "La agenda inteligente de Rovexca Health confirma, recuerda y gestiona citas por WhatsApp para asegurar que cada cita programada se convierta en ingreso real para tu consultorio.",
     bullets: [
       "Confirmación de asistencia directamente desde WhatsApp",
       "Recordatorios automáticos por WhatsApp y correo electrónico",
@@ -243,7 +243,7 @@ const features = [
     tagColor: "#16a34a",
     tagBg: "#f0fdf4",
     title: "Control financiero conectado a tu operación clínica.",
-    sub: "Cada cita confirmada, atendida o cancelada impacta automáticamente tus ingresos y reportes.",
+    sub: "Cada cita confirmada, atendida o cancelada impacta automáticamente tus ingresos y reportes con Rovexca Billing centraliza el control financiero de tu consultorio médico. Registra honorarios, cobros y pagos pendientes — toda la información organizada para que tomes mejores decisiones.",
     bullets: [
       "Registro de ingresos y honorarios por consulta",
       "Control de cobros y pagos pendientes por paciente",
@@ -259,7 +259,7 @@ const features = [
     tagColor: "#7c3aed",
     tagBg: "#f5f3ff",
     title: "Expediente clínico conectado a cada interacción con el paciente.",
-    sub: "Cada cita, seguimiento y procedimiento queda registrado automáticamente en el historial del paciente.",
+    sub: "Olvídate del papel y los archivos dispersos. Rovexca Clinical centraliza el historial completo de cada paciente — cada cita, seguimiento y procedimiento queda registrado automáticamente en el historial del paciente — notas, estudios e imágenes — accesible desde cualquier dispositivo, en segundos.",
     bullets: [
       "Notas de consulta digitales organizadas por fecha y paciente",
       "Adjuntos de estudios, imágenes y recetas digitales",
@@ -275,7 +275,7 @@ const features = [
     tagColor: "#0891b2",
     tagBg: "#ecfeff",
     title: "Coordinación quirúrgica sin llamadas ni intermediarios.",
-    sub: "Gestiona solicitudes, reprogramaciones y confirmaciones con hospitales desde un flujo digital centralizado.",
+    sub: "Gestiona solicitudes, reprogramaciones y confirmaciones con hospitales desde un flujo digital centralizado coordinando la programación de cirugías con hospitales, gestionando fechas, disponibilidad y seguimiento desde una sola plataforma. Sin llamadas ni hojas de papel.",
     bullets: [
       "Registro y seguimiento de procedimientos quirúrgicos por paciente",
       "Coordinación de fechas con hospitales desde el sistema",
@@ -290,8 +290,8 @@ const features = [
     tag: "🔄  Seguimiento de pacientes crónicos",
     tagColor: "#059669",
     tagBg: "#ecfdf5",
-    title: "Seguimiento automático de pacientes después de la consulta.",
-    sub: "Rovexca contacta a tus pacientes automáticamente para asegurar continuidad en su tratamiento y evitar abandono.",
+    title: "Seguimiento automático de pacientes crónicos después de la consulta.",
+    sub: "Da continuidad al tratamiento de pacientes con padecimientos crónicos mediante recordatorios, historial clínico y seguimiento estructurado. Toda la evolución del paciente en un solo lugar para asegurar continuidad en su tratamiento y evitar abandono.",
     bullets: [
       "Re-activación automática de pacientes inactivos",
       "Recordatorios automáticos para citas de seguimiento",
@@ -316,7 +316,7 @@ export default function FeaturesSection() {
             <br />que funciona desde el primer día
           </h2>
           <p style={{ fontSize: 17, color: "#6b7280", lineHeight: 1.6 }}>
-            Automatiza citas, recordatorios, confirmaciones y seguimiento de pacientes desde el primer día, usando WhatsApp como canal principal.
+            Software médico que automatiza citas, recordatorios, confirmaciones y seguimiento de pacientes desde el primer día, usando WhatsApp como canal principal.
           </p>
         </div>
 
