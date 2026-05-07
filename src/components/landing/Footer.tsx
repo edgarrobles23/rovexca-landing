@@ -68,10 +68,10 @@ export default function Footer() {
             </p>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
               {[
-                { t: "Acerca de", h: "#" },
-                { t: "Contacto", h: "#demo" },
-                { t: "Aviso de privacidad", h: "#" },
-                { t: "Términos de uso", h: "#" },
+                { t: "Acerca de", h: "/acerca-de" },
+                { t: "Contacto", h: "/#demo" },
+                { t: "Aviso de privacidad", h: "/privacidad" },
+                { t: "Términos de uso", h: "/terminos" },
               ].map(({ t, h }) => (
                 <li key={t}>
                   <a href={h} style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
@@ -102,13 +102,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 28, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 28, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <p style={{ fontSize: 13, color: "rgba(255,255,255,0.25)" }}>
             © {new Date().getFullYear()} Rovexca Health. Todos los derechos reservados.
           </p>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.2)" }}>
-            Hecho con precisión clínica en México 🇲🇽
-          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
+            <a href="/privacidad" style={{ fontSize: 13, color: "rgba(255,255,255,0.3)", textDecoration: "none" }}>
+              Aviso de privacidad
+            </a>
+            <a href="/terminos" style={{ fontSize: 13, color: "rgba(255,255,255,0.3)", textDecoration: "none" }}>
+              Términos de uso
+            </a>
+            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.2)", margin: 0 }}>
+              Diseñado en México para la operación médica moderna.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
