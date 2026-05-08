@@ -87,6 +87,8 @@ export default function TrialModal({ isOpen, onClose }: Props) {
   const [apiErr, setApiErr] = useState("");
   const [turnstileErr, setTurnstileErr] = useState(false); // widget-level error
   const [turnstileToken, setTurnstileToken] = useState("");
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const [rateLimited, setRateLimited] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
@@ -134,12 +136,19 @@ export default function TrialModal({ isOpen, onClose }: Props) {
       removeWidget();
       setApiErr("");
       setDone(false);
+      setAcceptedTerms(false);
       return;
     }
 
     document.body.style.overflow = "hidden";
     setApiErr("");
     setTurnstileErr(false);
+
+    // No site key → dev bypass mode, no widget needed
+    if (!SITE_KEY) {
+      setTurnstileToken("dev-turnstile-bypass");
+      return;
+    }
 
     // Poll until turnstile script is available (lazyOnload may still be loading)
     let attempts = 0;
@@ -177,6 +186,7 @@ export default function TrialModal({ isOpen, onClose }: Props) {
     register,
     handleSubmit,
     reset,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm<TrialFormData>({ resolver: zodResolver(trialSchema) });
 
@@ -206,6 +216,8 @@ export default function TrialModal({ isOpen, onClose }: Props) {
           ...data,
           usersEstimate: Number(data.usersEstimate),
           turnstileToken,
+          acceptedTerms: true,
+          acceptedPrivacy: true,
         }),
       });
       const json = await res.json();
@@ -214,18 +226,24 @@ export default function TrialModal({ isOpen, onClose }: Props) {
         setDone(true);
         reset();
       } else {
-        // Detect backend Turnstile validation failure → reset widget and explain clearly
-        const msg: string = json.message ?? "";
-        const isTurnstileRejection =
-          msg.toLowerCase().includes("verificar") ||
-          msg.toLowerCase().includes("turnstile") ||
-          msg.toLowerCase().includes("seguridad");
+        const errorCode: string = json.errorCode ?? "";
+        const msg: string = json.message ?? "Ocurrió un error. Intenta nuevamente.";
 
-        if (isTurnstileRejection) {
-          setApiErr("La verificación de seguridad no pudo completarse. Se ha generado un código nuevo — intenta enviar de nuevo.");
-          resetTurnstileWidget();
-        } else {
-          setApiErr(msg || "Ocurrió un error. Intenta nuevamente.");
+        switch (errorCode) {
+          case "TURNSTILE_FAILED":
+            setApiErr("La verificación de seguridad no pudo completarse. Se ha generado un código nuevo — intenta enviar de nuevo.");
+            resetTurnstileWidget();
+            break;
+          case "RATE_LIMITED":
+            setRateLimited(true);
+            setTimeout(() => setRateLimited(false), 30_000);
+            setApiErr(msg);
+            break;
+          case "DISPOSABLE_EMAIL":
+            setError("email", { message: msg });
+            break;
+          default:
+            setApiErr(msg);
         }
       }
     } catch {
@@ -239,6 +257,7 @@ export default function TrialModal({ isOpen, onClose }: Props) {
     reset();
     setDone(false);
     setApiErr("");
+    setAcceptedTerms(false);
     onClose();
   };
 
@@ -246,7 +265,7 @@ export default function TrialModal({ isOpen, onClose }: Props) {
 
   if (!isOpen) return null;
 
-  const canSubmit = !isSubmitting && !!turnstileToken;
+  const canSubmit = !isSubmitting && !!turnstileToken && acceptedTerms && !rateLimited;
 
   return (
     <div
@@ -402,6 +421,56 @@ export default function TrialModal({ isOpen, onClose }: Props) {
                         Error al cargar la verificación. Recarga la página e intenta de nuevo.
                       </p>
                     )}
+                  </div>
+
+                  {/* Legal acceptance */}
+                  <div style={{
+                    background: "#f8fafc",
+                    border: "1.5px solid #e5e7eb",
+                    borderRadius: 12,
+                    padding: "14px 16px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                  }}>
+                    <label style={{ display: "flex", alignItems: "flex-start", gap: 10, cursor: "pointer" }}>
+                      <input
+                        type="checkbox"
+                        checked={acceptedTerms}
+                        onChange={(e) => setAcceptedTerms(e.target.checked)}
+                        style={{
+                          marginTop: 2,
+                          width: 16, height: 16,
+                          accentColor: "#2563eb",
+                          flexShrink: 0,
+                          cursor: "pointer",
+                        }}
+                      />
+                      <span style={{ fontSize: 13, color: "#374151", lineHeight: 1.6 }}>
+                        Acepto los{" "}
+                        <a
+                          href="/terminos"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#2563eb", fontWeight: 600, textDecoration: "underline" }}
+                        >
+                          Términos y Condiciones
+                        </a>
+                        {" "}y la{" "}
+                        <a
+                          href="/privacidad"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#2563eb", fontWeight: 600, textDecoration: "underline" }}
+                        >
+                          Política de Privacidad
+                        </a>
+                        .
+                      </span>
+                    </label>
+                    <p style={{ fontSize: 11, color: "#9ca3af", lineHeight: 1.65, paddingLeft: 26 }}>
+                      Al continuar, aceptas recibir comunicaciones relacionadas con tu cuenta y operación de la plataforma por correo electrónico y WhatsApp.
+                    </p>
                   </div>
 
                   {/* Error general */}
