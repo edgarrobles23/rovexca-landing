@@ -1,46 +1,53 @@
 "use client";
 
-const openTrial = () => window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
+import { trackEvent } from "@/lib/analytics";
+
+const openTrial = () => {
+  trackEvent("click_pricing_cta", { plan: "consultorio_base", price_mxn: 799, source: "pricing_card" });
+  window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
+};
 
 const groups = [
   {
     label: "Operación diaria",
     items: [
-      "Agenda médica con recordatorios por WhatsApp",
-      "Gestión de pacientes",
-      "Vista multi-médico",
+      { text: "Agenda médica con recordatorios por WhatsApp", note: "500 mensajes al mes incluidos" },
+      { text: "Gestión de pacientes" },
+      { text: "Vista multi-médico" },
     ],
   },
   {
     label: "Expediente clínico",
     items: [
-      "Registro de consultas médicas",
-      "Historial clínico del paciente",
-      "Adjuntos de estudios e imágenes",
+      { text: "Registro de consultas médicas" },
+      { text: "Historial clínico del paciente" },
+      { text: "Adjuntos de estudios e imágenes" },
     ],
   },
   {
     label: "Control financiero",
     items: [
-      "Registro de ingresos y cobros",
-      "Control de pagos pendientes",
-      "Información para facturación",
+      { text: "Registro de ingresos y cobros" },
+      { text: "Control de pagos pendientes" },
+      { text: "Información para facturación" },
     ],
   },
   {
     label: "Gestión avanzada",
     items: [
-      "Métricas clave del consultorio",
-      "Programación y seguimiento de cirugías",
-      "Seguimiento de pacientes crónicos",
+      { text: "Métricas clave del consultorio" },
+      { text: "Programación y seguimiento de cirugías" },
+      { text: "Seguimiento de pacientes crónicos" },
     ],
   },
   {
     label: "Incluido",
     items: [
-      "Hasta 3 usuarios",
-      "Soporte en español",
-      "Acceso en la nube",
+      { text: "Hasta 3 usuarios incluidos", note: "1 médico · 1 administrador · 1 recepcionista" },
+      { text: "500 mensajes de WhatsApp incluidos al mes", note: "Para recordatorios, confirmaciones y comunicación con pacientes." },
+      { text: "Licencia adicional por médico" },
+      { text: "Soporte en español" },
+      { text: "Acceso en la nube" },
     ],
   },
 ];
@@ -131,6 +138,14 @@ export default function PricingSection() {
               </div>
             </div>
 
+            {/* Per-doctor clarification */}
+            <p style={{ fontSize: 14, fontWeight: 700, color: "#0f172a", marginBottom: 2 }}>
+              Para 1 médico titular
+            </p>
+            <p style={{ fontSize: 12, color: "#6b7280", marginBottom: 4 }}>
+              Incluye hasta 3 usuarios: médico, administrador y recepcionista.
+            </p>
+
             {/* Urgency + future price */}
             <p style={{ fontSize: 13, color: "#2563eb", fontWeight: 600, marginBottom: 4 }}>
               Oferta exclusiva para los primeros 50 consultorios
@@ -154,15 +169,26 @@ export default function PricingSection() {
                   </p>
                   <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
                     {items.map((b) => (
-                      <li key={b} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <li key={b.text} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
                         <Check />
-                        <span style={{ fontSize: 14, color: "#374151" }}>{b}</span>
+                        <div>
+                          <span style={{ fontSize: 14, color: "#374151" }}>{b.text}</span>
+                          {b.note && (
+                            <p style={{ fontSize: 11, color: "#9ca3af", marginTop: 1 }}>{b.note}</p>
+                          )}
+                        </div>
                       </li>
                     ))}
                   </ul>
                 </div>
               ))}
             </div>
+
+            {/* Footer note */}
+            <p style={{ fontSize: 11, color: "#9ca3af", textAlign: "center", marginBottom: 16, lineHeight: 1.6 }}>
+              Precio base para 1 médico titular. Incluye 500 mensajes de WhatsApp al mes.<br />
+              Médicos y mensajes adicionales disponibles con costo extra.
+            </p>
 
             {/* CTA */}
             <button

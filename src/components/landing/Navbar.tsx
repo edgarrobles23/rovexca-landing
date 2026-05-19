@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 const links = [
   { label: "Módulos", href: "#modulos" },
@@ -29,6 +30,7 @@ export default function Navbar() {
 
   const openTrial = () => {
     setOpen(false);
+    trackEvent("click_free_trial", { location: "navbar", source: "landing_rovexca_health" });
     window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
   };
 

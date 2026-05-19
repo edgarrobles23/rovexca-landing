@@ -2,8 +2,12 @@
 
 import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
-const openTrial = () => window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
+const openTrial = () => {
+  trackEvent("click_free_trial", { location: "hero", source: "landing_rovexca_health" });
+  window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
+};
 
 function MiniDashboard() {
   return (
@@ -154,7 +158,12 @@ export default function HeroSection() {
                 Prueba gratis 15 días — sin tarjeta
                 <ArrowRight size={16} />
               </button>
-              <a href="#demo" className="btn-secondary" style={{ fontSize: 15 }}>
+              <a
+                href="#demo"
+                className="btn-secondary"
+                style={{ fontSize: 15 }}
+                onClick={() => trackEvent("click_demo", { location: "hero", source: "landing_rovexca_health" })}
+              >
                 Solicitar demo
               </a>
             </div>

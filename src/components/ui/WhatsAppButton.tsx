@@ -1,5 +1,7 @@
 "use client";
 
+import { trackEvent } from "@/lib/analytics";
+
 const WA = "528110804363";
 const MSG = encodeURIComponent("Hola, me interesa conocer Rovexca Health. ¿Pueden agendar una demo?");
 
@@ -9,6 +11,7 @@ export default function WhatsAppButton() {
       href={`https://wa.me/${WA}?text=${MSG}`}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackEvent("click_whatsapp", { location: "floating_button", source: "landing_rovexca_health" })}
       aria-label="WhatsApp"
       style={{
         position: "fixed",

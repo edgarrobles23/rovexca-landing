@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import GlobalTrialModal from "@/components/landing/GlobalTrialModal";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={inter.variable}>
       <body>
+        <GoogleAnalytics />
         {children}
         <GlobalTrialModal />
       </body>
