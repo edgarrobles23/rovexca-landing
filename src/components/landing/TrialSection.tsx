@@ -112,7 +112,7 @@ export default function TrialSection() {
 
           {/* Trust strip */}
           <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap", marginTop: 24 }}>
-            {["Sin contrato", "Cancela cuando quieras", "Soporte en español", "+500 consultorios activos"].map((t) => (
+            {["Sin contrato", "Cancela cuando quieras", "Soporte en español", "Consultorios activos en México"].map((t) => (
               <span key={t} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "#6b7280" }}>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2 6l3 3 5-5" stroke="#16a34a" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />

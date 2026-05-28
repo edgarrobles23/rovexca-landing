@@ -120,7 +120,7 @@ export default function HeroSection() {
                 ))}
               </div>
               <span style={{ fontSize: 13, fontWeight: 600, color: "#15803d" }}>
-                +500 médicos ya usan Rovexca Health
+                Médicos ya usan Rovexca Health
               </span>
             </div>
 

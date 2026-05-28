@@ -368,7 +368,7 @@ export default function AcercaDePage() {
             {/* Stats */}
             <div style={{ display: "flex", justifyContent: "center", gap: 48, marginTop: 48, flexWrap: "wrap" }}>
               {[
-                { val: "+500", label: "consultorios activos" },
+                { val: "Cientos", label: "de consultorios activos" },
                 { val: "96%", label: "tasa de asistencia promedio" },
                 { val: "-3h", label: "menos trabajo administrativo al día" },
               ].map((s) => (

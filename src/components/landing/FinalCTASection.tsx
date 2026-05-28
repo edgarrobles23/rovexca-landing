@@ -35,7 +35,7 @@ export default function FinalCTASection() {
             ))}
           </div>
           <p style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", fontWeight: 600 }}>
-            <strong style={{ color: "#fff" }}>+500 médicos</strong> ya usan Rovexca Health en México
+            <strong style={{ color: "#fff" }}>Médicos en todo México</strong> ya usan Rovexca Health
           </p>
         </div>
 
