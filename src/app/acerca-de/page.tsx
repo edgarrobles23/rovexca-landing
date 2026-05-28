@@ -2,11 +2,46 @@ import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import PageBreadcrumb from "@/components/landing/PageBreadcrumb";
+
+const OG_IMAGE = {
+  url: "/images/og-image.png",
+  alt: "Rovexca Health — Automatización médica inteligente en México",
+  width: 1200,
+  height: 630,
+};
 
 export const metadata: Metadata = {
-  title: "Acerca de Rovexca Health — Automatización Médica Inteligente",
+  title: "Acerca de Rovexca Health — Automatización médica inteligente en México",
   description:
-    "Conoce la plataforma SaaS que está transformando la operación de consultorios médicos y clínicas en México con automatización, WhatsApp e IA.",
+    "Conoce la plataforma que automatiza la operación de consultorios médicos en México. Agenda, expediente clínico e ingresos en un solo sistema.",
+  keywords: [
+    "acerca de Rovexca Health",
+    "automatización consultorio médico México",
+    "plataforma médica en la nube",
+    "software médico WhatsApp",
+    "misión Rovexca Health",
+  ],
+  alternates: {
+    canonical: "https://www.rovexca.ai/acerca-de",
+  },
+  openGraph: {
+    title: "Acerca de Rovexca Health — Automatización médica inteligente en México",
+    description:
+      "Conoce la plataforma que automatiza la operación de consultorios médicos en México. Agenda, expediente clínico e ingresos en un solo sistema.",
+    type: "website",
+    locale: "es_MX",
+    siteName: "Rovexca Health",
+    url: "https://www.rovexca.ai/acerca-de",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Acerca de Rovexca Health — Automatización médica inteligente en México",
+    description:
+      "Conoce la plataforma que automatiza la operación de consultorios médicos en México. Agenda, expediente clínico e ingresos en un solo sistema.",
+    images: [OG_IMAGE.url],
+  },
 };
 
 const problems = [
@@ -116,6 +151,10 @@ export default function AcercaDePage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 68 }}>
+        <PageBreadcrumb items={[
+          { name: "Inicio", href: "/" },
+          { name: "Acerca de Rovexca Health", href: "/acerca-de" },
+        ]} />
 
         {/* ── Hero ─────────────────────────────────────────────────── */}
         <section style={{ background: "#080f1f", padding: "88px 1.5rem 80px", textAlign: "center" }}>

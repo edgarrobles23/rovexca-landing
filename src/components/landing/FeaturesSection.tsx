@@ -221,7 +221,20 @@ function ChronicVisual() {
   );
 }
 
-const features = [
+type Feature = {
+  tag: string;
+  tagColor: string;
+  tagBg: string;
+  title: string;
+  sub: string;
+  bullets: string[];
+  cta: string;
+  ctaHref?: string;
+  visual: React.ReactNode;
+  imgLeft: boolean;
+};
+
+const features: Feature[] = [
   {
     tag: "📅  Agenda médica digital",
     tagColor: "#2563eb",
@@ -235,6 +248,7 @@ const features = [
       "Vista multi-médico para consultorios con equipo",
     ],
     cta: "Ver Rovexca Agenda",
+    ctaHref: "/agenda-medica-digital",
     visual: <AgendaVisual />,
     imgLeft: false,
   },
@@ -251,6 +265,7 @@ const features = [
       "Datos fiscales del paciente para facilitar tu facturación",
     ],
     cta: "Ver Rovexca Billing",
+    ctaHref: "/control-ingresos-consultorio",
     visual: <BillingVisual />,
     imgLeft: true,
   },
@@ -267,6 +282,7 @@ const features = [
       "Sistema médico en la nube, disponible desde cualquier dispositivo",
     ],
     cta: "Ver Rovexca Clinical",
+    ctaHref: "/expediente-clinico-electronico",
     visual: <ClinicalVisual />,
     imgLeft: false,
   },
@@ -322,7 +338,7 @@ export default function FeaturesSection() {
 
         {/* Feature rows */}
         <div style={{ display: "flex", flexDirection: "column", gap: 100 }}>
-          {features.map(({ tag, tagColor, tagBg, title, sub, bullets, cta, visual, imgLeft }) => (
+          {features.map(({ tag, tagColor, tagBg, title, sub, bullets, cta, ctaHref, visual, imgLeft }) => (
             <div
               key={title}
               style={{ display: "grid", gridTemplateColumns: "1fr", gap: 52, alignItems: "center" }}
@@ -347,7 +363,7 @@ export default function FeaturesSection() {
                 <ul style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 32 }}>
                   {bullets.map(b => <Bullet key={b} text={b} />)}
                 </ul>
-                <a href="#demo" className="btn-primary" style={{ fontSize: 14 }}>
+                <a href={ctaHref ?? "#demo"} className="btn-primary" style={{ fontSize: 14 }}>
                   {cta} <ArrowRight size={15} />
                 </a>
               </div>

@@ -7,6 +7,7 @@ const modules = [
     features: ["Recordatorios automáticos por WhatsApp", "Vista multi-médico", "Bloqueo de horarios"],
     color: "#2563eb",
     bg: "#eff6ff",
+    href: "/agenda-medica-digital",
   },
   {
     icon: "📋",
@@ -16,6 +17,7 @@ const modules = [
     features: ["Registro de consultas médicas", "Historial clínico del paciente", "Adjuntos de estudios e imágenes"],
     color: "#16a34a",
     bg: "#f0fdf4",
+    href: "/expediente-clinico-electronico",
   },
   {
     icon: "💳",
@@ -25,6 +27,7 @@ const modules = [
     features: ["Registro de ingresos y cobros", "Control de pagos pendientes", "Información para facturación"],
     color: "#d97706",
     bg: "#fffbeb",
+    href: "/control-ingresos-consultorio",
   },
   {
     icon: "📊",
@@ -75,7 +78,7 @@ export default function ModulesSection() {
 
         {/* Cards */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-          {modules.map(({ icon, name, tagline, body, features, color, bg }) => (
+          {modules.map(({ icon, name, tagline, body, features, color, bg, href }) => (
             <div
               key={name}
               className="module-card"
@@ -102,7 +105,7 @@ export default function ModulesSection() {
               <p style={{ fontSize: 14, color: "#94a3b8", lineHeight: 1.65, marginBottom: 18 }}>{body}</p>
 
               {/* Feature list */}
-              <ul style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <ul style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: href ? 18 : 0 }}>
                 {features.map((f) => (
                   <li key={f} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: color, flexShrink: 0 }} />
@@ -110,6 +113,19 @@ export default function ModulesSection() {
                   </li>
                 ))}
               </ul>
+
+              {href && (
+                <a
+                  href={href}
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: 4,
+                    fontSize: 13, fontWeight: 600, color,
+                    textDecoration: "none",
+                  }}
+                >
+                  Conocer más →
+                </a>
+              )}
             </div>
           ))}
         </div>

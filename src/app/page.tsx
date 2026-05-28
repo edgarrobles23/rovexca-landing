@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import ProblemsSection from "@/components/landing/ProblemsSection";
@@ -14,10 +15,51 @@ import LeadFormSection from "@/components/landing/LeadFormSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
 import Footer from "@/components/landing/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import { faqs } from "@/lib/faq-data";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.rovexca.ai/",
+  },
+};
+
+const softwareAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Rovexca Health",
+  applicationCategory: "HealthApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "799",
+    priceCurrency: "MXN",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: a,
+    },
+  })),
+};
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
       <main>
         <HeroSection />

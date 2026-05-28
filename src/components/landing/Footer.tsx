@@ -69,6 +69,7 @@ export default function Footer() {
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
               {[
                 { t: "Acerca de", h: "/acerca-de" },
+                { t: "Blog", h: "/blog" },
                 { t: "Contacto", h: "/#demo" },
                 { t: "Aviso de privacidad", h: "/privacidad" },
                 { t: "Términos de uso", h: "/terminos" },
