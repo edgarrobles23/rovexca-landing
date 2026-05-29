@@ -159,7 +159,7 @@ export default function PricingSection() {
 
             {/* Benefits */}
             <p style={{ fontSize: 13, fontWeight: 700, color: "#0f172a", marginBottom: 16 }}>
-              Incluye todo lo necesario para gestionar tu consultorio:
+              Beneficios exclusivos:
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 32 }}>
               {groups.map(({ label, items }) => (
