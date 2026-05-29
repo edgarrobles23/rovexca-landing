@@ -1,6 +1,27 @@
 import type { NextConfig } from "next";
 
+const APP_URL = "https://app.rovexca.ai";
+
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/dashboard",
+        destination: `${APP_URL}/dashboard`,
+        permanent: false,
+      },
+      {
+        source: "/login",
+        destination: `${APP_URL}/login`,
+        permanent: false,
+      },
+      {
+        source: "/api/integrations/:path*",
+        destination: `${APP_URL}/api/integrations/:path*`,
+        permanent: false,
+      },
+    ];
+  },
   // SSR mode (default) — required for API routes (/api/lead, /api/trial)
   // Do NOT set output: 'export' — that would break server-side functionality
 

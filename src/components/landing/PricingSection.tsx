@@ -3,7 +3,7 @@
 import { trackEvent } from "@/lib/analytics";
 
 const openTrial = () => {
-  trackEvent("click_pricing_cta", { plan: "consultorio_base", price_mxn: 799, source: "pricing_card" });
+  trackEvent("click_pricing_cta", { plan: "consultorio_base", price_mxn: 1199, source: "pricing_card" });
   window.dispatchEvent(new CustomEvent("rovexca:open-trial"));
 };
 
@@ -105,7 +105,7 @@ export default function PricingSection() {
               <path d="M8 1l1.8 3.6L14 5.5l-3 2.9.7 4.1L8 10.4l-3.7 2.1.7-4.1-3-2.9 4.2-.9L8 1z" fill="#fff" />
             </svg>
             <span style={{ fontSize: 12, fontWeight: 700, color: "#fff", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              Todo lo esencial incluido
+              Beneficios Paquete Premium
             </span>
           </div>
 
@@ -130,7 +130,7 @@ export default function PricingSection() {
             {/* Current price */}
             <div style={{ display: "flex", alignItems: "flex-end", gap: 4, marginBottom: 4 }}>
               <span style={{ fontSize: 52, fontWeight: 900, color: "#0f172a", letterSpacing: "-0.03em", lineHeight: 1 }}>
-                $799
+                $1,199
               </span>
               <div style={{ paddingBottom: 6 }}>
                 <span style={{ fontSize: 16, fontWeight: 600, color: "#6b7280" }}>MXN</span>
@@ -148,7 +148,7 @@ export default function PricingSection() {
 
             {/* Urgency + future price */}
             <p style={{ fontSize: 13, color: "#2563eb", fontWeight: 600, marginBottom: 4 }}>
-              Oferta exclusiva para los primeros 50 consultorios
+              ⚡ Últimas unidades disponibles — precio de lanzamiento
             </p>
             <p style={{ fontSize: 12, color: "#9ca3af", marginBottom: 28 }}>
               Sin contrato · Cancela cuando quieras · Precio regular $1,599 MXN / mes
