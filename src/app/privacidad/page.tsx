@@ -38,7 +38,7 @@ export default function PrivacidadPage() {
               Política de Privacidad
             </h1>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>
-              Última actualización: mayo de 2025
+              Última actualización: junio de 2026
             </p>
           </div>
         </div>
@@ -128,7 +128,16 @@ export default function PrivacidadPage() {
               </p>
             </Section>
 
-            <Section id="proteccion" title="5. Protección de los Datos Personales">
+            <Section id="google-calendar" title="5. Integración con Google Calendar">
+              <p>
+                Rovexca Health permite a los usuarios conectar su cuenta de Google Calendar para sincronizar citas médicas generadas dentro de la plataforma. Cuando el usuario autoriza esta integración, Rovexca Health puede crear, actualizar o cancelar eventos de calendario relacionados con citas médicas, de acuerdo con las acciones realizadas por el usuario dentro del sistema.
+              </p>
+              <p>
+                La información obtenida de Google Calendar se utiliza únicamente para operar la funcionalidad de agenda y sincronización de citas. Rovexca Health no vende, transfiere ni utiliza los datos de Google Calendar para publicidad. El usuario puede desconectar la integración en cualquier momento desde la configuración de su cuenta o revocar el acceso desde su cuenta de Google.
+              </p>
+            </Section>
+
+            <Section id="proteccion" title="6. Protección de los Datos Personales">
               <p>
                 Rovexca Health implementa medidas técnicas, administrativas y físicas para proteger los datos contra acceso no autorizado, pérdida, alteración o divulgación indebida:
               </p>
@@ -144,7 +153,7 @@ export default function PrivacidadPage() {
               </p>
             </Section>
 
-            <Section id="arco" title="6. Derechos ARCO">
+            <Section id="arco" title="7. Derechos ARCO">
               <p>
                 Conforme a la LFPDPPP, tienes derecho a <strong>Acceder, Rectificar, Cancelar u Oponerte</strong> (derechos ARCO) al tratamiento de tus datos personales.
               </p>
@@ -162,7 +171,7 @@ export default function PrivacidadPage() {
               </p>
             </Section>
 
-            <Section id="conservacion" title="7. Conservación de la Información">
+            <Section id="conservacion" title="8. Conservación de la Información">
               <p>Los datos personales se conservan durante el tiempo necesario para cumplir con los fines del servicio:</p>
               <ul>
                 <li><strong>Datos de cuenta y uso:</strong> durante la vigencia de la suscripción y hasta 2 años posteriores a la cancelación, salvo solicitud de eliminación anticipada.</li>
@@ -174,7 +183,7 @@ export default function PrivacidadPage() {
               </p>
             </Section>
 
-            <Section id="cambios" title="8. Cambios al Aviso de Privacidad">
+            <Section id="cambios" title="9. Cambios al Aviso de Privacidad">
               <p>
                 Rovexca Health puede modificar este Aviso de Privacidad cuando sea necesario, por ejemplo, ante cambios en la legislación, en las funciones de la plataforma o en los proveedores de servicios.
               </p>
@@ -186,7 +195,7 @@ export default function PrivacidadPage() {
               </p>
             </Section>
 
-            <Section id="contacto" title="9. Contacto">
+            <Section id="contacto" title="10. Contacto">
               <p>Para cualquier pregunta o solicitud relacionada con el tratamiento de tus datos personales:</p>
               <ul>
                 <li><strong>Correo electrónico:</strong> privacidad@rovexca.ai</li>
