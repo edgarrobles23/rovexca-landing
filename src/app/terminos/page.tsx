@@ -38,7 +38,7 @@ export default function TerminosPage() {
               Términos y Condiciones
             </h1>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>
-              Última actualización: mayo de 2025
+              Última actualización: junio de 2026
             </p>
           </div>
         </div>
@@ -150,6 +150,7 @@ export default function TerminosPage() {
               <ul>
                 <li><strong>WhatsApp Business API / Meta:</strong> para el envío de mensajes de recordatorio y confirmación de citas. Su uso está sujeto a las Políticas de WhatsApp para Empresas y las Condiciones de Uso de Meta.</li>
                 <li><strong>Twilio:</strong> proveedor de comunicaciones utilizado para la integración con WhatsApp. Sujeto a sus propios Términos de Servicio.</li>
+                <li><strong>Google Calendar:</strong> integración opcional que el usuario puede autorizar para sincronizar citas médicas. Su uso está sujeto a los Términos de Servicio de Google y se rige conforme a lo descrito en nuestra Política de Privacidad.</li>
                 <li><strong>Proveedores de infraestructura cloud:</strong> para el almacenamiento y procesamiento de datos.</li>
                 <li><strong>Procesadores de pago:</strong> para la gestión segura de cobros de suscripción.</li>
               </ul>
