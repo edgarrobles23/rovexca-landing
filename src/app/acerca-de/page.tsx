@@ -362,14 +362,14 @@ export default function AcercaDePage() {
               Rovexca Health no es un software genérico adaptado para salud. Es una plataforma construida desde cero pensando en el flujo real de un consultorio médico: la relación con el paciente, los tiempos de agenda, los procesos repetitivos y la necesidad de información clara para tomar mejores decisiones.
             </p>
             <p style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", lineHeight: 1.75 }}>
-              Médicos de todo México confían en Rovexca Health para operar con más control, menos estrés y mejores resultados — desde el primer día.
+              Rovexca Health está diseñado para que cada consultorio opere con más control, menos estrés y mejores resultados — desde el primer día.
             </p>
 
             {/* Stats */}
             <div style={{ display: "flex", justifyContent: "center", gap: 48, marginTop: 48, flexWrap: "wrap" }}>
               {[
-                { val: "Cientos", label: "de consultorios activos" },
-                { val: "96%", label: "tasa de asistencia promedio" },
+                { val: "100%", label: "enfocado en consultorios médicos" },
+                { val: "Hecho en México", label: "para el flujo real de tu consultorio" },
                 { val: "-3h", label: "menos trabajo administrativo al día" },
               ].map((s) => (
                 <div key={s.label} style={{ textAlign: "center" }}>
